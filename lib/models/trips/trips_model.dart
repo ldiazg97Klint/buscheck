@@ -18,6 +18,8 @@ class Trip with _$Trip {
     int? id,
     int? tripId,
     DateTime? date,
+    DateTime? start,
+    DateTime? end,
     String? schedule,
     String? arrival,
     int? seats,

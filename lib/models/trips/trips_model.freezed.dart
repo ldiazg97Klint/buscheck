@@ -176,6 +176,8 @@ mixin _$Trip {
   int? get id => throw _privateConstructorUsedError;
   int? get tripId => throw _privateConstructorUsedError;
   DateTime? get date => throw _privateConstructorUsedError;
+  DateTime? get start => throw _privateConstructorUsedError;
+  DateTime? get end => throw _privateConstructorUsedError;
   String? get schedule => throw _privateConstructorUsedError;
   String? get arrival => throw _privateConstructorUsedError;
   int? get seats => throw _privateConstructorUsedError;
@@ -208,6 +210,8 @@ abstract class $TripCopyWith<$Res> {
       {int? id,
       int? tripId,
       DateTime? date,
+      DateTime? start,
+      DateTime? end,
       String? schedule,
       String? arrival,
       int? seats,
@@ -241,6 +245,8 @@ class _$TripCopyWithImpl<$Res, $Val extends Trip>
     Object? id = freezed,
     Object? tripId = freezed,
     Object? date = freezed,
+    Object? start = freezed,
+    Object? end = freezed,
     Object? schedule = freezed,
     Object? arrival = freezed,
     Object? seats = freezed,
@@ -267,6 +273,14 @@ class _$TripCopyWithImpl<$Res, $Val extends Trip>
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      start: freezed == start
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      end: freezed == end
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       schedule: freezed == schedule
           ? _value.schedule
@@ -335,6 +349,8 @@ abstract class _$$TripImplCopyWith<$Res> implements $TripCopyWith<$Res> {
       {int? id,
       int? tripId,
       DateTime? date,
+      DateTime? start,
+      DateTime? end,
       String? schedule,
       String? arrival,
       int? seats,
@@ -365,6 +381,8 @@ class __$$TripImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? tripId = freezed,
     Object? date = freezed,
+    Object? start = freezed,
+    Object? end = freezed,
     Object? schedule = freezed,
     Object? arrival = freezed,
     Object? seats = freezed,
@@ -391,6 +409,14 @@ class __$$TripImplCopyWithImpl<$Res>
       date: freezed == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      start: freezed == start
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      end: freezed == end
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       schedule: freezed == schedule
           ? _value.schedule
@@ -455,6 +481,8 @@ class _$TripImpl implements _Trip {
       {this.id,
       this.tripId,
       this.date,
+      this.start,
+      this.end,
       this.schedule,
       this.arrival,
       this.seats,
@@ -480,6 +508,10 @@ class _$TripImpl implements _Trip {
   final int? tripId;
   @override
   final DateTime? date;
+  @override
+  final DateTime? start;
+  @override
+  final DateTime? end;
   @override
   final String? schedule;
   @override
@@ -524,7 +556,7 @@ class _$TripImpl implements _Trip {
 
   @override
   String toString() {
-    return 'Trip(id: $id, tripId: $tripId, date: $date, schedule: $schedule, arrival: $arrival, seats: $seats, plate: $plate, imageVehicle: $imageVehicle, name: $name, origin: $origin, price: $price, originImage: $originImage, destination: $destination, destinationImage: $destinationImage, reservedSeats: $reservedSeats, seatMap: $seatMap)';
+    return 'Trip(id: $id, tripId: $tripId, date: $date, start: $start, end: $end, schedule: $schedule, arrival: $arrival, seats: $seats, plate: $plate, imageVehicle: $imageVehicle, name: $name, origin: $origin, price: $price, originImage: $originImage, destination: $destination, destinationImage: $destinationImage, reservedSeats: $reservedSeats, seatMap: $seatMap)';
   }
 
   @override
@@ -535,6 +567,8 @@ class _$TripImpl implements _Trip {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.tripId, tripId) || other.tripId == tripId) &&
             (identical(other.date, date) || other.date == date) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
             (identical(other.schedule, schedule) ||
                 other.schedule == schedule) &&
             (identical(other.arrival, arrival) || other.arrival == arrival) &&
@@ -563,6 +597,8 @@ class _$TripImpl implements _Trip {
       id,
       tripId,
       date,
+      start,
+      end,
       schedule,
       arrival,
       seats,
@@ -598,6 +634,8 @@ abstract class _Trip implements Trip {
       {final int? id,
       final int? tripId,
       final DateTime? date,
+      final DateTime? start,
+      final DateTime? end,
       final String? schedule,
       final String? arrival,
       final int? seats,
@@ -620,6 +658,10 @@ abstract class _Trip implements Trip {
   int? get tripId;
   @override
   DateTime? get date;
+  @override
+  DateTime? get start;
+  @override
+  DateTime? get end;
   @override
   String? get schedule;
   @override
