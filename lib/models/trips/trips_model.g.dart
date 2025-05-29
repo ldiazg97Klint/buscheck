@@ -29,22 +29,11 @@ _$TripImpl _$$TripImplFromJson(Map<String, dynamic> json) => _$TripImpl(
       schedule: json['schedule'] as String?,
       arrival: json['arrival'] as String?,
       seats: (json['seats'] as num?)?.toInt(),
-      plate: json['plate'] as String?,
-      imageVehicle: json['imageVehicle'] as String?,
+      boarding: (json['boarding'] as num?)?.toInt(),
+      pending: (json['pending'] as num?)?.toInt(),
       name: json['name'] as String?,
       origin: json['origin'] as String?,
-      price: json['price'] as String?,
-      originImage: json['originImage'] as String?,
       destination: json['destination'] as String?,
-      destinationImage: json['destinationImage'] as String?,
-      reservedSeats: (json['reservedSeats'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
-      seatMap: (json['seatMap'] as List<dynamic>?)
-          ?.map((e) => (e as List<dynamic>)
-              .map((e) => SeatMap.fromJson(e as Map<String, dynamic>))
-              .toList())
-          .toList(),
     );
 
 Map<String, dynamic> _$$TripImplToJson(_$TripImpl instance) =>
@@ -57,16 +46,11 @@ Map<String, dynamic> _$$TripImplToJson(_$TripImpl instance) =>
       'schedule': instance.schedule,
       'arrival': instance.arrival,
       'seats': instance.seats,
-      'plate': instance.plate,
-      'imageVehicle': instance.imageVehicle,
+      'boarding': instance.boarding,
+      'pending': instance.pending,
       'name': instance.name,
       'origin': instance.origin,
-      'price': instance.price,
-      'originImage': instance.originImage,
       'destination': instance.destination,
-      'destinationImage': instance.destinationImage,
-      'reservedSeats': instance.reservedSeats,
-      'seatMap': instance.seatMap,
     };
 
 _$SeatMapImpl _$$SeatMapImplFromJson(Map<String, dynamic> json) =>

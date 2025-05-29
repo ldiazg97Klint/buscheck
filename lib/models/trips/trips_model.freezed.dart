@@ -181,16 +181,11 @@ mixin _$Trip {
   String? get schedule => throw _privateConstructorUsedError;
   String? get arrival => throw _privateConstructorUsedError;
   int? get seats => throw _privateConstructorUsedError;
-  String? get plate => throw _privateConstructorUsedError;
-  String? get imageVehicle => throw _privateConstructorUsedError;
+  int? get boarding => throw _privateConstructorUsedError;
+  int? get pending => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get origin => throw _privateConstructorUsedError;
-  String? get price => throw _privateConstructorUsedError;
-  String? get originImage => throw _privateConstructorUsedError;
   String? get destination => throw _privateConstructorUsedError;
-  String? get destinationImage => throw _privateConstructorUsedError;
-  List<int>? get reservedSeats => throw _privateConstructorUsedError;
-  List<List<SeatMap>>? get seatMap => throw _privateConstructorUsedError;
 
   /// Serializes this Trip to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -215,16 +210,11 @@ abstract class $TripCopyWith<$Res> {
       String? schedule,
       String? arrival,
       int? seats,
-      String? plate,
-      String? imageVehicle,
+      int? boarding,
+      int? pending,
       String? name,
       String? origin,
-      String? price,
-      String? originImage,
-      String? destination,
-      String? destinationImage,
-      List<int>? reservedSeats,
-      List<List<SeatMap>>? seatMap});
+      String? destination});
 }
 
 /// @nodoc
@@ -250,16 +240,11 @@ class _$TripCopyWithImpl<$Res, $Val extends Trip>
     Object? schedule = freezed,
     Object? arrival = freezed,
     Object? seats = freezed,
-    Object? plate = freezed,
-    Object? imageVehicle = freezed,
+    Object? boarding = freezed,
+    Object? pending = freezed,
     Object? name = freezed,
     Object? origin = freezed,
-    Object? price = freezed,
-    Object? originImage = freezed,
     Object? destination = freezed,
-    Object? destinationImage = freezed,
-    Object? reservedSeats = freezed,
-    Object? seatMap = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -294,14 +279,14 @@ class _$TripCopyWithImpl<$Res, $Val extends Trip>
           ? _value.seats
           : seats // ignore: cast_nullable_to_non_nullable
               as int?,
-      plate: freezed == plate
-          ? _value.plate
-          : plate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageVehicle: freezed == imageVehicle
-          ? _value.imageVehicle
-          : imageVehicle // ignore: cast_nullable_to_non_nullable
-              as String?,
+      boarding: freezed == boarding
+          ? _value.boarding
+          : boarding // ignore: cast_nullable_to_non_nullable
+              as int?,
+      pending: freezed == pending
+          ? _value.pending
+          : pending // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -310,30 +295,10 @@ class _$TripCopyWithImpl<$Res, $Val extends Trip>
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as String?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as String?,
-      originImage: freezed == originImage
-          ? _value.originImage
-          : originImage // ignore: cast_nullable_to_non_nullable
-              as String?,
       destination: freezed == destination
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as String?,
-      destinationImage: freezed == destinationImage
-          ? _value.destinationImage
-          : destinationImage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reservedSeats: freezed == reservedSeats
-          ? _value.reservedSeats
-          : reservedSeats // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      seatMap: freezed == seatMap
-          ? _value.seatMap
-          : seatMap // ignore: cast_nullable_to_non_nullable
-              as List<List<SeatMap>>?,
     ) as $Val);
   }
 }
@@ -354,16 +319,11 @@ abstract class _$$TripImplCopyWith<$Res> implements $TripCopyWith<$Res> {
       String? schedule,
       String? arrival,
       int? seats,
-      String? plate,
-      String? imageVehicle,
+      int? boarding,
+      int? pending,
       String? name,
       String? origin,
-      String? price,
-      String? originImage,
-      String? destination,
-      String? destinationImage,
-      List<int>? reservedSeats,
-      List<List<SeatMap>>? seatMap});
+      String? destination});
 }
 
 /// @nodoc
@@ -386,16 +346,11 @@ class __$$TripImplCopyWithImpl<$Res>
     Object? schedule = freezed,
     Object? arrival = freezed,
     Object? seats = freezed,
-    Object? plate = freezed,
-    Object? imageVehicle = freezed,
+    Object? boarding = freezed,
+    Object? pending = freezed,
     Object? name = freezed,
     Object? origin = freezed,
-    Object? price = freezed,
-    Object? originImage = freezed,
     Object? destination = freezed,
-    Object? destinationImage = freezed,
-    Object? reservedSeats = freezed,
-    Object? seatMap = freezed,
   }) {
     return _then(_$TripImpl(
       id: freezed == id
@@ -430,14 +385,14 @@ class __$$TripImplCopyWithImpl<$Res>
           ? _value.seats
           : seats // ignore: cast_nullable_to_non_nullable
               as int?,
-      plate: freezed == plate
-          ? _value.plate
-          : plate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageVehicle: freezed == imageVehicle
-          ? _value.imageVehicle
-          : imageVehicle // ignore: cast_nullable_to_non_nullable
-              as String?,
+      boarding: freezed == boarding
+          ? _value.boarding
+          : boarding // ignore: cast_nullable_to_non_nullable
+              as int?,
+      pending: freezed == pending
+          ? _value.pending
+          : pending // ignore: cast_nullable_to_non_nullable
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -446,30 +401,10 @@ class __$$TripImplCopyWithImpl<$Res>
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as String?,
-      price: freezed == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as String?,
-      originImage: freezed == originImage
-          ? _value.originImage
-          : originImage // ignore: cast_nullable_to_non_nullable
-              as String?,
       destination: freezed == destination
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as String?,
-      destinationImage: freezed == destinationImage
-          ? _value.destinationImage
-          : destinationImage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reservedSeats: freezed == reservedSeats
-          ? _value._reservedSeats
-          : reservedSeats // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      seatMap: freezed == seatMap
-          ? _value._seatMap
-          : seatMap // ignore: cast_nullable_to_non_nullable
-              as List<List<SeatMap>>?,
     ));
   }
 }
@@ -486,18 +421,11 @@ class _$TripImpl implements _Trip {
       this.schedule,
       this.arrival,
       this.seats,
-      this.plate,
-      this.imageVehicle,
+      this.boarding,
+      this.pending,
       this.name,
       this.origin,
-      this.price,
-      this.originImage,
-      this.destination,
-      this.destinationImage,
-      final List<int>? reservedSeats,
-      final List<List<SeatMap>>? seatMap})
-      : _reservedSeats = reservedSeats,
-        _seatMap = seatMap;
+      this.destination});
 
   factory _$TripImpl.fromJson(Map<String, dynamic> json) =>
       _$$TripImplFromJson(json);
@@ -519,44 +447,19 @@ class _$TripImpl implements _Trip {
   @override
   final int? seats;
   @override
-  final String? plate;
+  final int? boarding;
   @override
-  final String? imageVehicle;
+  final int? pending;
   @override
   final String? name;
   @override
   final String? origin;
   @override
-  final String? price;
-  @override
-  final String? originImage;
-  @override
   final String? destination;
-  @override
-  final String? destinationImage;
-  final List<int>? _reservedSeats;
-  @override
-  List<int>? get reservedSeats {
-    final value = _reservedSeats;
-    if (value == null) return null;
-    if (_reservedSeats is EqualUnmodifiableListView) return _reservedSeats;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<List<SeatMap>>? _seatMap;
-  @override
-  List<List<SeatMap>>? get seatMap {
-    final value = _seatMap;
-    if (value == null) return null;
-    if (_seatMap is EqualUnmodifiableListView) return _seatMap;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
 
   @override
   String toString() {
-    return 'Trip(id: $id, tripId: $tripId, date: $date, start: $start, end: $end, schedule: $schedule, arrival: $arrival, seats: $seats, plate: $plate, imageVehicle: $imageVehicle, name: $name, origin: $origin, price: $price, originImage: $originImage, destination: $destination, destinationImage: $destinationImage, reservedSeats: $reservedSeats, seatMap: $seatMap)';
+    return 'Trip(id: $id, tripId: $tripId, date: $date, start: $start, end: $end, schedule: $schedule, arrival: $arrival, seats: $seats, boarding: $boarding, pending: $pending, name: $name, origin: $origin, destination: $destination)';
   }
 
   @override
@@ -573,45 +476,19 @@ class _$TripImpl implements _Trip {
                 other.schedule == schedule) &&
             (identical(other.arrival, arrival) || other.arrival == arrival) &&
             (identical(other.seats, seats) || other.seats == seats) &&
-            (identical(other.plate, plate) || other.plate == plate) &&
-            (identical(other.imageVehicle, imageVehicle) ||
-                other.imageVehicle == imageVehicle) &&
+            (identical(other.boarding, boarding) ||
+                other.boarding == boarding) &&
+            (identical(other.pending, pending) || other.pending == pending) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.originImage, originImage) ||
-                other.originImage == originImage) &&
             (identical(other.destination, destination) ||
-                other.destination == destination) &&
-            (identical(other.destinationImage, destinationImage) ||
-                other.destinationImage == destinationImage) &&
-            const DeepCollectionEquality()
-                .equals(other._reservedSeats, _reservedSeats) &&
-            const DeepCollectionEquality().equals(other._seatMap, _seatMap));
+                other.destination == destination));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      tripId,
-      date,
-      start,
-      end,
-      schedule,
-      arrival,
-      seats,
-      plate,
-      imageVehicle,
-      name,
-      origin,
-      price,
-      originImage,
-      destination,
-      destinationImage,
-      const DeepCollectionEquality().hash(_reservedSeats),
-      const DeepCollectionEquality().hash(_seatMap));
+  int get hashCode => Object.hash(runtimeType, id, tripId, date, start, end,
+      schedule, arrival, seats, boarding, pending, name, origin, destination);
 
   /// Create a copy of Trip
   /// with the given fields replaced by the non-null parameter values.
@@ -639,16 +516,11 @@ abstract class _Trip implements Trip {
       final String? schedule,
       final String? arrival,
       final int? seats,
-      final String? plate,
-      final String? imageVehicle,
+      final int? boarding,
+      final int? pending,
       final String? name,
       final String? origin,
-      final String? price,
-      final String? originImage,
-      final String? destination,
-      final String? destinationImage,
-      final List<int>? reservedSeats,
-      final List<List<SeatMap>>? seatMap}) = _$TripImpl;
+      final String? destination}) = _$TripImpl;
 
   factory _Trip.fromJson(Map<String, dynamic> json) = _$TripImpl.fromJson;
 
@@ -669,25 +541,15 @@ abstract class _Trip implements Trip {
   @override
   int? get seats;
   @override
-  String? get plate;
+  int? get boarding;
   @override
-  String? get imageVehicle;
+  int? get pending;
   @override
   String? get name;
   @override
   String? get origin;
   @override
-  String? get price;
-  @override
-  String? get originImage;
-  @override
   String? get destination;
-  @override
-  String? get destinationImage;
-  @override
-  List<int>? get reservedSeats;
-  @override
-  List<List<SeatMap>>? get seatMap;
 
   /// Create a copy of Trip
   /// with the given fields replaced by the non-null parameter values.

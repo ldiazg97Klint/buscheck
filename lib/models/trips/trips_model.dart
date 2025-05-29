@@ -23,16 +23,11 @@ class Trip with _$Trip {
     String? schedule,
     String? arrival,
     int? seats,
-    String? plate,
-    String? imageVehicle,
+    int? boarding,
+    int? pending,
     String? name,
     String? origin,
-    String? price,
-    String? originImage,
     String? destination,
-    String? destinationImage,
-    List<int>? reservedSeats,
-    List<List<SeatMap>>? seatMap,
   }) = _Trip;
 
   factory Trip.fromJson(Map<String, dynamic> json) => _$TripFromJson(json);
