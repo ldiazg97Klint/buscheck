@@ -75,8 +75,6 @@ Future<void> verifyQrTicketService(String qrData) async {
   }
 }
 
-
-
 void dataSelectedRoute(int idTrip) {
   // Verifica si tripsSignal no es null y contiene datos
   if (tripsSignal.value != null) {
