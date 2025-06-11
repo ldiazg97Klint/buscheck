@@ -14,23 +14,24 @@ class ScheduleCardController {
   ScheduleCardController({
     required this.context,
     required this.phase,
-    required this.start,
-    required this.end,
+    this.start,
+    this.end,
     required this.onStart,
     required this.onFinish,
   });
 
-  _ButtonConfig? getButtonConfig() {
+  /// Configuración del botón según el estado del viaje
+  ButtonConfig? getButtonConfig() {
     switch (phase) {
       case TripPhase.boarding:
-        return _ButtonConfig(
+        return ButtonConfig(
           text: 'Abordando',
           color: Colors.blue,
           onPressed: () => GoRouter.of(context).push('/ScannerPage'),
         );
       case TripPhase.readyToStart:
         if (start == null && end == null) {
-          return _ButtonConfig(
+          return ButtonConfig(
             text: 'Iniciar Viaje',
             color: Colors.green,
             onPressed: onStart,
@@ -39,7 +40,7 @@ class ScheduleCardController {
         break;
       case TripPhase.inProgress:
         if (start != null && end == null) {
-          return _ButtonConfig(
+          return ButtonConfig(
             text: 'Finalizar Viaje',
             color: Colors.orange,
             onPressed: onFinish,
@@ -47,7 +48,7 @@ class ScheduleCardController {
         }
         break;
       case TripPhase.finished:
-        return _ButtonConfig(
+        return ButtonConfig(
           text: 'Viaje Finalizado',
           color: Colors.grey[600]!,
           onPressed: null,
@@ -58,19 +59,18 @@ class ScheduleCardController {
     return null;
   }
 
+  /// Calcula tiempo restante para la salida en formato [valor, unidad]
   List<String> calculateTimeToGo(String timeIni) {
-    DateTime now = DateTime.now();
-    DateTime departureTime = DateFormat("HH:mm").parse(timeIni);
-    departureTime = DateTime(
+    final now = DateTime.now();
+    DateTime departure = DateFormat('HH:mm').parse(timeIni);
+    departure = DateTime(
       now.year,
       now.month,
       now.day,
-      departureTime.hour,
-      departureTime.minute,
+      departure.hour,
+      departure.minute,
     );
-
-    Duration diff = departureTime.difference(now);
-
+    final diff = departure.difference(now);
     if (diff.isNegative) {
       return ['Salió', ''];
     } else if (diff.inMinutes <= 30) {
@@ -80,21 +80,24 @@ class ScheduleCardController {
     }
   }
 
+  /// Extrae la región (última parte) de la dirección
   String getRegion(String address) {
     final parts = address.split(',');
     return parts.isNotEmpty ? parts.last.trim() : '';
   }
 
-  String limitText(String text, int max) =>
-      text.length > max ? '${text.substring(0, max)}...' : text;
+  /// Limita longitud de texto
+  String limitText(String text, int max) {
+    return text.length > max ? text.substring(0, max) + '...' : text;
+  }
 }
 
-class _ButtonConfig {
+class ButtonConfig {
   final String text;
   final Color color;
   final VoidCallback? onPressed;
 
-  _ButtonConfig({
+  ButtonConfig({
     required this.text,
     required this.color,
     required this.onPressed,

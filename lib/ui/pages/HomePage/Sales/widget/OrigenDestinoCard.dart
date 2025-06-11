@@ -36,7 +36,8 @@ class OrigenDestinoCard extends StatelessWidget {
             // Parte izquierda: iconos, líneas y textos
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -48,7 +49,8 @@ class OrigenDestinoCard extends StatelessWidget {
                         Container(
                           width: 14,
                           height: 14,
-                          margin: const EdgeInsets.only(top: 2), // Ajuste fino para alinear con el texto
+                          margin: const EdgeInsets.only(
+                              top: 2), // Ajuste fino para alinear con el texto
                           decoration: const BoxDecoration(
                             color: Colors.blue,
                             shape: BoxShape.circle,
@@ -68,7 +70,9 @@ class OrigenDestinoCard extends StatelessWidget {
                         Container(
                           width: 14,
                           height: 14,
-                          margin: const EdgeInsets.only(bottom: 20), // Ajuste fino para alinear con el texto
+                          margin: const EdgeInsets.only(
+                              bottom:
+                                  20), // Ajuste fino para alinear con el texto
                           decoration: const BoxDecoration(
                             color: Colors.orange,
                             shape: BoxShape.circle,

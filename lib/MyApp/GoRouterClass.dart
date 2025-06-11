@@ -1,4 +1,3 @@
-// Configuración de rutas con GoRouter
 import 'package:BusGo/myApp/MyApp.dart';
 import 'package:BusGo/ui/pages/HomePage/Home/HomePage.dart';
 import 'package:BusGo/ui/pages/HomePage/ReportPage.dart';
@@ -11,6 +10,7 @@ import 'package:BusGo/ui/pages/Statistics/StatisticsPageAll.dart';
 import 'package:go_router/go_router.dart';
 
 import '../ui/pages/HomePage/Home/widget/ScannerPage.dart';
+import '../ui/pages/HomePage/Sales/list_page.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: [
@@ -23,6 +23,12 @@ final GoRouter appRouter = GoRouter(
       path: '/HomePage',
       builder: (context, state) => HomePage(),
     ),
+
+    GoRoute(
+        path: '/tripList',
+        builder: (contex, state) => ListPage(),
+    ),
+
     GoRoute(
       path: '/ScannerPage',
       builder: (context, state) => const QrScannerPage(),

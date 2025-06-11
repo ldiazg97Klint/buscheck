@@ -43,54 +43,56 @@ class _ListPageState extends State<ListPage> {
     // Obtener todos los viajes
     final allTrips = tripsSignal.watch(context) ?? <Trip>[];
     // Filtrar solo los pendientes: no iniciados y no en abordaje
-    final pendingTrips = allTrips
-        .where((t) => t.start == null && !_isBoarding(t))
-        .toList();
+    final pendingTrips =
+        allTrips.where((t) => t.start == null && !_isBoarding(t)).toList();
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white,),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: const Text('Viajes  pendientes'),
       ),
       body: pendingTrips.isEmpty
           ? const Center(
-        child: Text(
-          "No hay viajes pendientes",
-          style: TextStyle(
-            fontSize: 16,
-            fontStyle: FontStyle.italic,
-            color: Colors.grey,
-          ),
-        ),
-      )
+              child: Text(
+                "No hay viajes pendientes",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.grey,
+                ),
+              ),
+            )
           : ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-        itemCount: pendingTrips.length,
-        itemBuilder: (context, index) {
-          final t = pendingTrips[index];
-          // formatear horas para mostrar
-          final salida = t.schedule != null
-              ? DateFormat('HH:mm').format(_parseFlexible(t.schedule!))
-              : '';
-          final llegada = t.arrival != null
-              ? DateFormat('HH:mm').format(_parseFlexible(t.arrival!))
-              : '';
-          return Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: OrigenDestinoCard(
-              origen: t.origin ?? 'Desconocido',
-              destino: t.destination ?? 'Desconocido',
-              salida: salida,
-              llegada: llegada,
-              capacidad: t.seats ?? 0,
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+              itemCount: pendingTrips.length,
+              itemBuilder: (context, index) {
+                final t = pendingTrips[index];
+                // formatear horas para mostrar
+                final salida = t.schedule != null
+                    ? DateFormat('HH:mm').format(_parseFlexible(t.schedule!))
+                    : '';
+                final llegada = t.arrival != null
+                    ? DateFormat('HH:mm').format(_parseFlexible(t.arrival!))
+                    : '';
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: OrigenDestinoCard(
+                    origen: t.origin ?? 'Desconocido',
+                    destino: t.destination ?? 'Desconocido',
+                    salida: salida,
+                    llegada: llegada,
+                    capacidad: t.seats ?? 0,
+                  ),
+                );
+              },
             ),
-          );
-        },
-      ),
     );
   }
 }

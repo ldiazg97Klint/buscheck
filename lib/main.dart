@@ -1,6 +1,7 @@
 import 'package:BusGo/myApp/MyApp.dart';
 import 'package:BusGo/util/util_class_translation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 
@@ -9,6 +10,9 @@ Future<void> main() async {
  
   await initializeDateFormatting('es', null);
   await TranslationManager.loadDefaultTranslations('es');
-
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
